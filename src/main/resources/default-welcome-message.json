@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "lines": [
+    "&6Welcome, &e{player}&6!",
+    "&7You are playing on our test server.",
+    "",
+    "&b[Visit our website](https://example.com)",
+    "&a[Join our Discord](https://discord.com)",
+    "&7Enjoy your stay!"
+  ]
+}

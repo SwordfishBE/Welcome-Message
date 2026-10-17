@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "welcome_message",
+  "version": "${version}",
+  "name": "Welcome Message",
+  "description": "Personal welcome messages with clickable links and live configuration reload.",
+  "authors": ["SwordfishBE"],
+    "contact": {
+    "homepage": "https://github.com/SwordfishBE/Welcome-Message",
+    "sources": "https://github.com/SwordfishBE/Welcome-Message",
+    "email": "swordfishbe@locutus.net"
+  },
+  "license": "AGPL-3.0",
+  "icon": "assets/welcome_message/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["net.welcome_message.WelcomeMessage"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
