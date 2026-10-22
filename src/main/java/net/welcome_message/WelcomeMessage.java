@@ -62,7 +62,7 @@ public final class WelcomeMessage implements ModInitializer {
         try {
             config.reload();
             LOGGER.debug("[Welcome Message] Configuration reloaded ({} lines).", config.current().lines().size());
-            if (source != null && source.getEntity() instanceof ServerPlayer) {
+            if (source != null) {
                 source.sendSuccess(() -> Component.literal("[Welcome Message] Configuration reloaded."), false);
             }
             return 1;
@@ -70,7 +70,7 @@ public final class WelcomeMessage implements ModInitializer {
             String message = "[Welcome Message] Reload failed; the previous configuration remains active. "
                     + exception.getMessage();
             LOGGER.warn("{}", message);
-            if (source != null && source.getEntity() instanceof ServerPlayer) {
+            if (source != null) {
                 source.sendFailure(Component.literal(message));
             }
             return 0;
