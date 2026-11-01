@@ -1,5 +1,5 @@
 plugins {
-    id 'net.fabricmc.fabric-loom' version '1.17.21'
+    id 'net.fabricmc.fabric-loom' version "${loom_version}"
 }
 
 group = 'net.welcome_message'
@@ -11,12 +11,16 @@ java {
     withSourcesJar()
 }
 
-repositories { mavenCentral() }
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.terraformersmc.com/releases/' }
+}
 
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
-    implementation "net.fabricmc:fabric-loader:${fabric_loader}"
-    implementation "net.fabricmc.fabric-api:fabric-api:${fabric_api}"
+    implementation "net.fabricmc:fabric-loader:${loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
+    localRuntime "com.terraformersmc:modmenu:${modmenu_version}"
     testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.11.4'
 }
@@ -26,6 +30,6 @@ processResources {
     filesMatching('fabric.mod.json') { expand version: project.version }
 }
 
-tasks.named('jar') { from('README.md') }
+tasks.named('jar') { from('README.md', 'CHANGELOG.md') }
 
 tasks.named('test') { useJUnitPlatform() }

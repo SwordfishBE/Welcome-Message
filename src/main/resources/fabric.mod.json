@@ -17,8 +17,8 @@
     "main": ["net.welcome_message.WelcomeMessage"]
   },
   "depends": {
-    "fabricloader": ">=0.19.5",
-    "minecraft": "~26.3",
+    "fabricloader": ">=0.20.1",
+    "minecraft": ">=26.4-alpha.6 <=26.4",
     "java": ">=25",
     "fabric-api": "*"
   }
